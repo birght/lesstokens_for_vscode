@@ -84,12 +84,46 @@ applyTo: "**"
 
 ## 三、使用方式
 
+### 默认行为（自动）
+
+`caveman-lite.instructions.md` 已通过 `applyTo: "**"` 全局注入，**打开任何 Copilot Chat 对话即自动生效**，无需操作。
+
+### `#` 命令引用提示词文件（按需升级）
+
+在 Copilot Chat 输入框中，通过 `#` 命令可以引用 `.prompt.md` 文件：
+
+```
+# 操作步骤：
+1. 在 Chat 输入框输入 #
+2. 在弹出的列表中选择 "Prompt..."（或直接输入文件名模糊匹配）
+3. 选择目标级别的 .prompt.md 文件
+4. 输入你的问题，发送即可
+```
+
+**实际输入示例**：
+
+```
+#caveman-full 解释下 Vue 的 nextTick 原理
+```
+
+```
+#caveman-ultra 这段代码有什么性能问题？
+```
+
+```
+#caveman-wenyan pinia 和 vuex 区别
+```
+
+> `#` 引用的 `.prompt.md` 仅对**当次对话**生效，不影响其他对话。关闭对话后自动恢复默认 lite 级别。
+
+### 操作速查表
+
 | 场景 | 操作 | 效果 |
 |------|------|------|
 | **日常（默认）** | 无需操作 | `.instructions.md` 自动注入 lite 级别 |
-| **升级到 Full** | Chat 输入框输入 `#` → 选 `Prompt...` → 选 `caveman-full` | 当次对话切换到穴居人模式 |
-| **升级到 Ultra** | 同上，选 `caveman-ultra` | 电报式极限压缩 |
-| **切换文言文** | 同上，选 `caveman-wenyan` | 古典中文输出 |
+| **升级到 Full** | 输入 `#` → 选 `caveman-full` | 当次对话切换到穴居人模式 |
+| **升级到 Ultra** | 输入 `#` → 选 `caveman-ultra` | 电报式极限压缩 |
+| **切换文言文** | 输入 `#` → 选 `caveman-wenyan` | 古典中文输出 |
 | **停止** | 对话中说"正常模式"或"停止精简" | 恢复标准回复 |
 
 ---
