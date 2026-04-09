@@ -1,0 +1,2 @@
+# lesstokens_for_vscode
+基于caveman。针对vscode配置了全局提示词文件
